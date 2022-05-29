@@ -48,7 +48,9 @@ int32_t main(){
      for(int i=0;i<n;i++){
      	for(int j=0;j<n;j++){
      		cin>>image[i][j];
-     		newImage[i][j]=0;
+     		if(image[0][j]==1)newImage[i][j]=1;
+     		else if(image[i][0]==1)newImage[i][j]=1;
+     		else newImage[i][j]=0;
      	}
      }
      int pixel[m][m];
