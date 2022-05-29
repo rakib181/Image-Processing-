@@ -35,7 +35,7 @@ bool isFit(int image[n][n],int pix1[m][m],int x,int y){
              else return false;
 }
 
-bool isFit1(int image[n+2][n+2],int pix1[m][m],int x,int y){
+bool isFit1(int image[n+3][n+3],int pix1[m][m],int x,int y){
 	int ans=0;
 	int macroPix[m][m];
              macroPix[0][0]=image[x-1][y-1];
@@ -68,10 +68,18 @@ int32_t main(){
  	 auto start=clock();
      int image[n][n];
      int newImage[n][n];
+      int newImage2[n+3][n+3];
+        int finalImage[n+1][n+1];
      for(int i=0;i<n;i++){
      	for(int j=0;j<n;j++){
      		cin>>image[i][j];
      		newImage[i][j]=0;
+     		finalImage[i][j]=0;
+     	}
+     }
+     for(int i=0;i<=n+2;i++){
+     	for(int j=0;j<=n+2;j++){
+     		newImage2[i][j]=0;
      	}
      }
      int pixel[m][m];
@@ -90,7 +98,6 @@ int32_t main(){
      	}
      }
      //Letstry Zero Padding
-     int newImage2[n+2][n+2];
      for(int i=0;i<n+2;i++){
      	for(int j=0;j<n+2;j++){
            if( j==0 ||
@@ -103,7 +110,6 @@ int32_t main(){
            }
      	}
      }
-     int finalImage[n+1][n+1];
      for(int i=1;i<n+1;i++){
      	for(int j=1;j<n+1;j++){
              if(isFit1(newImage2,pixel,i,j)){
@@ -113,8 +119,8 @@ int32_t main(){
              }
      	}
      }
-     for(int i=1;i<=n;i++){
-     	for(int j=1;j<=n;j++){
+     for(int i=0;i<n;i++){
+     	for(int j=0;j<n;j++){
      		cout<<finalImage[i][j]<<' ';
      	}
      	cout<<'\n';
