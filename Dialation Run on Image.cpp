@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-const int n=12,m=3;
+const int n=14,m=3;
 
 int fit1(int pixI[m][m],int pixJ[m][m]){
 	int ans=0;
@@ -45,12 +45,11 @@ int32_t main(){
  	 auto start=clock();
      int image[n][n];
      int newImage[n][n];
+     //Input with Zero Padding
      for(int i=0;i<n;i++){
      	for(int j=0;j<n;j++){
      		cin>>image[i][j];
-     		if(image[0][j]==1)newImage[i][j]=1;
-     		else if(image[i][0]==1)newImage[i][j]=1;
-     		else newImage[i][j]=0;
+     		newImage[i][j]=0;
      	}
      }
      int pixel[m][m];
@@ -68,8 +67,8 @@ int32_t main(){
      		}
      	}
      }
-     for(int i=0;i<n;i++){
-     	for(int j=0;j<n;j++){
+     for(int i=1;i<n-1;i++){
+     	for(int j=1;j<n-1;j++){
      		cout<<newImage[i][j]<<' ';
      	}
      	cout<<'\n';
