@@ -74,6 +74,7 @@ int32_t main(){
         gy[i][j]=letsTry2(i,j);
       }
      }
+    
      for(int i=1;i<=5;i++){
       for(int j=1;j<=5;j++){
         M[i][j]=sqrt((gx[i][j]*gx[i][j])+(gy[i][j]*gy[i][j]));
@@ -86,13 +87,28 @@ int32_t main(){
         Angle[i][j]=(result*180)/3.1415;
       }
      }
+       cout << "gx table : \n";
+         for(int i=1;i<=5;i++){
+      for(int j=1;j<=5;j++){
+        cout << gx[i][j]<< ' ';
+      }
+      cout << '\n';
+     }
+      cout << "gy table : \n";
+      for(int i=1;i<=5;i++){
+      for(int j=1;j<=5;j++){
+        cout << gy[i][j]<< ' ';
+      }
+      cout << '\n';
+     }
+     cout << "Magnetude table : \n";
      for(int i=1;i<=5;i++){
       for(int j=1;j<=5;j++){
         cout << M[i][j] << ' ';
       }
       cout << '\n';
      }
-     cout << '\n';
+      cout << "Angle Table : \n";
       for(int i=1;i<=5;i++){
       for(int j=1;j<=5;j++){
         cout << Angle[i][j] << ' ';
